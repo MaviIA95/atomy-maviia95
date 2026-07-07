@@ -6,10 +6,11 @@
     <meta name="description" content="ATOMY - Opportunité de business en ligne 100% gratuite.">
     <title>ATOMY - Votre Boutique en Ligne GRATUITE | Opportunité 2026</title>
     <style>
+        /* ===== VARIABLES & COULEURS (Style original bleu) ===== */
         :root {
-            --primary-color: #2c5282;
+            --primary-color: #2c5282; /* Bleu foncé ATOMY */
             --primary-light: #4a5568;
-            --accent-color: #3182ce;
+            --accent-color: #3182ce;  /* Bleu bouton */
             --background: #f7fafc;
             --surface: #ffffff;
             --text-primary: #1a202c;
@@ -30,8 +31,12 @@
             font-size: var(--font-base);
             overflow-x: hidden;
         }
+        
+        /* ===== ANIMATIONS ===== */
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .animate { animation: fadeIn 0.8s ease-out; }
+
+        /* ===== HEADER ===== */
         .header {
             background: var(--primary-color);
             color: var(--text-on-primary);
@@ -44,25 +49,68 @@
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
         }
         .header h1 { font-size: 1.6em; margin: 0; font-weight: 600; }
+
+        /* ===== SECTIONS ===== */
         .section {
             min-height: 100vh;
             padding: 130px 20px 80px;
             display: none;
         }
         .section.active { display: block; animation: fadeIn 0.6s ease-out; }
-        .hero { background: var(--primary-color); color: var(--text-on-primary); text-align: center; }
+
+        /* Fond bleu pour les sections Page 1 et Page 2 */
+        .hero, #section2 { 
+            background: var(--primary-color); 
+            color: var(--text-on-primary); 
+        }
         .hero-content { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .hero h2 { font-size: 2.2em; margin-bottom: 20px; line-height: 1.4; font-weight: 700; }
+        .hero h2, #section2 h2 { font-size: 2.2em; margin-bottom: 20px; line-height: 1.4; font-weight: 700; }
+
+        /* ===== BLOCS (HIGHLIGHT BOX) ===== */
         .highlight-box {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.15); /* Translucide blanc sur bleu */
             padding: 25px;
             border-radius: var(--radius);
             margin: 25px 0;
             border: 2px solid rgba(255,255,255,0.3);
+            text-align: left;
         }
-        .highlight-box h3 { font-size: 1.6em; margin-bottom: 15px; color: #ffd700; }
+        .highlight-box h3 { font-size: 1.6em; margin-bottom: 15px; color: #ffd700; /* Titre Doré */ }
         .highlight-box ul { list-style: none; }
         .highlight-box li { padding: 8px 0; font-size: 1.1em; }
+        .highlight-box h5 { font-size: 1em; margin: 0; line-height: 1.6; }
+
+        /* ===== TÉMOIGNAGE ===== */
+        .testimonial-box {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 25px 0;
+            border: 2px solid rgba(255,255,255,0.2);
+            text-align: left;
+        }
+        .testimonial-box h5 { font-size: 1em; margin: 0; line-height: 1.6; }
+        .testimonial-signature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        .signature-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffd700;
+        }
+        .signature-name {
+            color: #ffd700;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* ===== BOUTONS ===== */
         .cta-button {
             display: inline-block;
             background: var(--accent-color);
@@ -82,28 +130,12 @@
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(49, 130, 206, 0.5); border-color: white; }
         .cta-info { background: var(--success); box-shadow: 0 5px 20px rgba(39, 103, 73, 0.3); }
         .cta-info:hover { box-shadow: 0 8px 25px rgba(39, 103, 73, 0.5); }
-        .benefits { background: var(--background); }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2em; color: var(--primary-color); margin-bottom: 40px; font-weight: 700; }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-            justify-items: center;
+
+        /* ===== FORMULAIRE (SECTION 4) ===== */
+        .optin { 
+            background: linear-gradient(135deg, #4a5568 0%, #2c5282 100%); 
+            text-align: center; 
         }
-        .benefits-grid > :nth-child(5):last-child { grid-column: 1 / -1; max-width: 320px; margin: 0 auto; }
-        .benefit-card {
-            background: var(--surface);
-            padding: 35px 25px;
-            border-radius: var(--radius);
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border: 2px solid var(--border-color);
-        }
-        .benefit-icon { font-size: 2.5em; margin-bottom: 15px; }
-        .benefit-card h3 { color: var(--primary-color); margin: 15px 0 12px; font-size: 1.3em; font-weight: 600; }
-        .optin { background: linear-gradient(135deg, #4a5568 0%, #2c5282 100%); text-align: center; }
         .optin-box {
             background: var(--surface);
             max-width: 750px;
@@ -123,7 +155,7 @@
         }
         .form-group { margin: 18px 0; text-align: left; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); font-size: 1.05em; }
-        .form-group input {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 14px;
             border: 2px solid var(--border-color);
@@ -132,8 +164,24 @@
             background: var(--background);
             color: var(--text-primary);
         }
-        .form-group input:focus { outline: none; border-color: var(--accent-color); background: white; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent-color); background: white; }
         .guarantee { margin-top: 20px; padding: 15px; background: #c6f6d5; border-radius: 8px; color: var(--success); font-size: 0.95em; }
+
+        /* ALIGNEMENT CHECKLIST À GAUCHE */
+        #section4 ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+            text-align: left;
+        }
+        #section4 ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* ===== SCHEDULE ZOOM ===== */
         .zoom-schedule {
             background: var(--background);
             border-radius: var(--radius);
@@ -142,7 +190,7 @@
             border-left: 4px solid var(--primary-color);
             text-align: left;
         }
-        .zoom-schedule h4 { color: var(--primary-color); margin-bottom: 12px; font-size: 1.2em; }
+        .zoom-schedule h4 { color: var(--primary-color); margin-bottom: 12px; font-size: 1.2em; text-align: center; }
         .schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
         .schedule-item { background: var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); }
         .schedule-item .time { font-weight: 600; color: var(--primary-color); font-size: 1.05em; }
@@ -154,17 +202,8 @@
             text-align: center;
             margin: 18px 0;
         }
-        .zoom-link-box a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            display: block;
-            padding: 10px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 6px;
-            margin-top: 10px;
-            word-break: break-all;
-        }
+
+        /* ===== THANK YOU ===== */
         .thankyou { background: linear-gradient(135deg, #276749 0%, #38a169 100%); text-align: center; }
         .thankyou-box {
             background: var(--surface);
@@ -191,6 +230,8 @@
             flex-shrink: 0;
             font-size: 0.95em;
         }
+
+        /* ===== FOOTER & MODALS ===== */
         .footer { background: #2d3748; color: white; text-align: center; padding: 25px 20px; }
         .footer a { color: #63b3ed; text-decoration: none; }
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; overflow-y: auto; }
@@ -198,8 +239,9 @@
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.5em; background: none; border: none; cursor: pointer; color: var(--text-secondary); }
         .progress-bar { position: fixed; top: 75px; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.3); z-index: 999; }
         .progress-fill { height: 100%; background: #ffd700; width: 0%; transition: width 0.3s; }
+
         @media (max-width: 768px) {
-            .hero h2 { font-size: 1.8em; }
+            .hero h2, #section2 h2 { font-size: 1.8em; }
             .cta-button { display: block; margin: 12px auto; max-width: 320px; }
             .section { padding: 110px 15px 60px; }
             .step-item { flex-direction: column; text-align: center; }
@@ -208,64 +250,96 @@
     </style>
 </head>
 <body>
-    <div class="header"><h1>🎯 ATOMY - Votre boutique gratuite en ligne</h1></div>
+    <div class="header"><h1> ATOMY - Votre boutique gratuite en ligne</h1></div>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
     <!-- SECTION 1: Hero -->
     <section class="section hero active" id="section1">
         <div class="hero-content animate">
             <h3>🚀 Pourquoi continuer à payer plus cher des produits de moindre qualité ?<br>
-				<span style="color: #ffd700;"> Découvrez comment accéder à des produits du quotidien de qualité absolue </span></h3>
-            <div id="referrerDisplay" style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; margin: 20px 0; display: none;">
-               👤 Présentation proposée par : <strong id="referrerName" style="color: #ffd700;"></strong></p>
+                <span style="color: #ffd700;"> Découvrez comment accéder à des produits du quotidien de qualité absolue dans votre boutique en ligne gratuite Atomy </span></h3>
+            
+            <!-- BARRIÈRE PARRAIN AVEC PHOTO -->
+            <div id="referrerDisplay" style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 8px; margin: 20px 0; display: none; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="https://benmanager.kneo.me/files/Ben_Manager_Labs/ATOMY/Photo-MP.png" alt="Marie-Pierre" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #ffd700;">
+                    <span>👤 Présentation proposée par : <strong id="referrerName" style="color: #ffd700;"></strong></span>
+                </div>
             </div>
+            
+            <!-- POURQUOI CHOISIR ATOMY -->
             <div class="highlight-box">
-                <h3>💎 Pourquoi choisir ATOMY ?</h3>
-                <ul style="list-style: none; font-size: 1.1em; line-height: 2;">
+                <h3>✨ Pourquoi choisir ATOMY ?</h3>
+                <ul>
                     <li>✅ Votre boutique en ligne clé en main, à votre nom et prête à l'emploi</li>
                     <li>✅ Présence dans plus de 60 pays et expansion internationale continue</li>
                     <li>✅ Accompagnement personnalisé</li>
-                    <li>✅ Nous ne recherchons pas des vendeurs, mais des consommateurs satisfaits. Aucune
-démarche commerciale traditionnelle n'est requise.</li>
+                    <li>✅ Nous ne recherchons pas des vendeurs, mais des consommateurs satisfaits. Aucune démarche commerciale traditionnelle n'est requise.</li>
                 </ul>
             </div>
-			 <div class="highlight-box">
-                <h3>Témoignage :</h3>
-				
-                <h5>« Après plus de 20 ans dans le marketing relationnel, ATOMY m&#39;a fait découvrir une
-économie de partage accessible à tous. En un mois, je suis devenue Sales Master. Un an plus
-tard, plus de 800 personnes issues de plusieurs pays et continents ont rejoint notre
-communauté. »<br>
-				<span style="color: #ffd700;">-- Marie-Pierre </span></h5>
+            
+            <!-- TÉMOIGNAGE AVEC PHOTO -->
+            <div class="testimonial-box">
+                <h5>« Après plus de 20 ans dans le marketing relationnel, ATOMY m'a fait découvrir une économie de partage accessible à tous. En un mois, je suis devenue Sales Master. Un an plus tard, plus de 800 personnes issues de plusieurs pays et continents ont rejoint notre communauté. »</h5>
+                <div class="testimonial-signature">
+                    <img class="signature-photo" src="https://benmanager.kneo.me/files/Ben_Manager_Labs/ATOMY/Photo-MP.png" alt="Marie-Pierre">
+                    <span class="signature-name">— Marie-Pierre</span>
+                </div>
             </div>
-			<div class="highlight-box">
+            
+            <!-- CE QUE VOUS DÉCOUVRIREZ -->
+            <div class="highlight-box">
                 <h3>💎 Ce que vous découvrirez pendant la présentation</h3>
-                <ul style="list-style: none; font-size: 1.1em; line-height: 2;">
+                <ul>
                     <li>✅ Comment fonctionne votre boutique en ligne gratuite</li>
                     <li>✅ Les différentes possibilités offertes</li>
                     <li>✅ Pourquoi <strong>ATOMY</strong> connaît une expansion mondiale rapide</li>
-                    </ul>
+                </ul>
             </div>
+            
             <div style="margin: 30px 0;">
-                <button class="cta-button" onclick="goToSection(4)">👉 Oui, je souhaite découvrir ATOMY</button>
+                <button class="cta-button" onclick="goToSection(4)"> Oui, je souhaite découvrir ATOMY</button>
                 <br>
                 <button class="cta-button cta-info" onclick="goToSection(2)">📖 Je découvre ATOMY en quelques minutes</button>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: Benefits -->
-     <section class="section Benefits" id="section2">
-        <div class="hero-content animate">
-            <h2>🌍 Découvrir ATOMY en quelques minutes</h2>
-             <div class="highlight-box">
+    <!-- SECTION 2: Benefits (Fond bleu + Blocs identiques) -->
+    <section class="section benefits" id="section2">
+        <div class="hero-content animate" style="max-width: 800px;">
+            <h2 style="text-align: center; margin-bottom: 30px;">🌍 Découvrir ATOMY en quelques minutes</h2>
+            
+            <div class="highlight-box">
                 <h3>🌱 Une autre façon de consommer des produits du quotidien</h3>
-				
-                <h5>ATOMY permet d'accéder à des produits du quotidien de Qualité Absolue grâce à une boutique en ligne gratuite, avec un accompagnement personnalisé.</h5>
-				 
-            </div> 
-            <div style="text-align: center; margin: 50px 0;">
-                <button class="cta-button" onclick="goToSection(4)" style="font-size: 1.3em; padding: 22px 50px;">💎 Oui, je souhaite participer à une présentation Zoom</button>
+                <h5 style="font-size: 1em; line-height: 1.6;">ATOMY permet d'accéder à des produits du quotidien de Qualité Absolue grâce à une boutique en ligne gratuite, avec un accompagnement personnalisé.</h5>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🌿 Une qualité reconnue</h3>
+                <h5 style="font-size: 1em; line-height: 1.6;">Des produits développés selon les exigences de la Qualité Absolue et proposés au Prix le plus Juste, pour prendre soin de vous, de votre famille et de votre communauté au quotidien.</h5>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🛒 Votre boutique gratuite</h3>
+                <h5 style="font-size: 1em; line-height: 1.6;">Votre boutique en ligne est gratuite, à votre nom et prête à l'emploi. Vous pourrez commander vos produits en toute simplicité, sans abonnement, sans obligation d'achat.</h5>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🌍 Une ouverture sur le monde</h3>
+                <h5 style="font-size: 1em; line-height: 1.6;">ATOMY, déjà implantée dans plus de 60 pays, poursuit son expansion. Notre communauté accueille des citoyens du monde entier (ayant atteint l'âge de la majorité).</h5>
+            </div>
+            
+            <div class="highlight-box">
+                <h3> Une communauté qui vous accompagne</h3>
+                <h5 style="font-size: 1em; line-height: 1.6;">Vous n'êtes jamais seul(e). Dès votre inscription, vous bénéficiez de l'accompagnement de Marie-Pierre et de leaders expérimentés.</h5>
+            </div>
+            
+            <!-- SECTION ET MAINTENANT -->
+            <div style="text-align: center; margin: 40px 0;">
+                <h3 style="color: #ffd700; margin-bottom: 15px; font-size: 1.5em;">Et maintenant ?</h3>
+                <h5 style="margin-bottom: 20px; font-size: 1.1em;">Le meilleur moyen de découvrir ATOMY reste d'assister à une présentation Zoom conviviale, à l'issue de laquelle nous répondrons à toutes vos questions.</h5>
+                <button class="cta-button" onclick="goToSection(4)" style="font-size: 1.2em; padding: 18px 45px;">💎 Oui, je souhaite participer à une présentation Zoom</button>
             </div>
         </div>
     </section>
@@ -273,50 +347,257 @@ communauté. »<br>
     <!-- SECTION 4: Opt-in Form -->
     <section class="section optin" id="section4">
         <div class="optin-box animate">
-            <div class="urgency-banner">OUI ! Je confirme ma participation au zoom</div>
+            <div class="urgency-banner">Oui, je confirme ma participation au zoom</div>
             <h2 style="font-size: 1.8em; color: var(--text-primary); margin-bottom: 15px;">Bienvenue ! Plus qu'une étape ...</h2>
             <p style="color: var(--text-secondary); margin-bottom: 25px; font-size: 1.05em;">En quelques secondes, vous recevrez :<br>✅ Le lien d'accès à la présentation Zoom<br>✅ Les informations utiles pour bien démarrer avec ATOMY après le Zoom</p>
+            
             <div class="zoom-schedule">
-                <center><h4>📅 Horaires des zooms<br>Pensez à vérifier le décalage horaire selon votre pays.</br></h4></center>
+                <h4> Horaires des zooms<br><small style="font-weight: normal; display: block; margin-top: 5px;">Pensez à vérifier le décalage horaire selon votre pays.</small></h4>
                 <div class="schedule-grid">
                     <div class="schedule-item"><div class="time">🇫🇷 Lundi au Vendredi : 17 h</div><div>France métropolitaine</div></div>
                     <div class="schedule-item"><div class="time">🇫🇷 Mardi-Jeudi : 1 h du matin</div><div>France métropolitaine</div></div>
-                    <div class="schedule-item"><div class="time">🇫🇷 Lundi au Dimanche : 21 h</div><div>France métropolitaine</div></div>
-                    <div class="schedule-item"><div class="time">🇨🇦🇺🇸 Lundi-Mercredi : 19 h</div><div>Canada • USA • Antilles</div></div>
-                    <div class="schedule-item"><div class="time">🇫🇷 Samedi 16 h</div><div>France métropolitaine</div></div>
+                    <div class="schedule-item"><div class="time">🇷 Lundi au Dimanche : 21 h</div><div>France métropolitaine</div></div>
+                    <div class="schedule-item"><div class="time">🇨🇦🇸 Lundi-Mercredi : 19 h</div><div>Canada • USA • Antilles</div></div>
+                    <div class="schedule-item"><div class="time">🇷 Samedi 16 h</div><div>France métropolitaine</div></div>
                     <div class="schedule-item"><div class="time">🇬🇫 Lundi-Mercredi : 20 h</div><div>Guyane Française</div></div>
                 </div>
                 <div class="zoom-link-box">
                     <small style="display: block; margin-top: 8px; opacity: 0.95;">💡 Conseil : Rejoignez la présentation 5 minutes avant le début <br><br>(Lien unique pour tous les zooms)</small>
                 </div>
             </div>
+            
             <form id="leadForm" onsubmit="handleSubmit(event)">
                 <div class="form-group"><label for="prenom">Prénom *</label><input type="text" id="prenom" name="prenom" required placeholder="Votre prénom"></div>
                 <div class="form-group"><label for="nom">Nom *</label><input type="text" id="nom" name="nom" required placeholder="Votre nom"></div>
                 <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required placeholder="votre@email.com"></div>
                 <div class="form-group"><label for="telephone">Téléphone (WhatsApp de préférence)</label><input type="tel" id="telephone" name="telephone" placeholder="+33 6 XX XX XX XX"></div>
-                <div class="form-group"><label for="pays">Pays de Résidence *</label><input type="text" id="pays" name="pays" required placeholder="Ex: Ex. : France, Belgique, Guadeloupe, Cameroun, Canada, ..."></div>
+                
+                <!-- MENU DÉROULANT PAYS COMPLET -->
+                <div class="form-group">
+                    <label for="pays">Pays de Résidence *</label>
+                    <select id="pays" name="pays" required style="cursor: pointer;">
+                        <option value="" disabled selected>Sélectionnez votre pays de Résidence</option>
+                        <option value="Afghanistan">🇦🇫 Afghanistan</option>
+                        <option value="Afrique du Sud">🇦 Afrique du Sud</option>
+                        <option value="Albanie">🇦🇱 Albanie</option>
+                        <option value="Algérie">🇿 Algérie</option>
+                        <option value="Allemagne">🇩🇪 Allemagne</option>
+                        <option value="Andorre">🇦🇩 Andorre</option>
+                        <option value="Angola">🇴 Angola</option>
+                        <option value="Arabie saoudite">🇸 Arabie saoudite</option>
+                        <option value="Argentine">🇦🇷 Argentine</option>
+                        <option value="Arménie">🇦🇲 Arménie</option>
+                        <option value="Australie">🇦🇺 Australie</option>
+                        <option value="Autriche">🇹 Autriche</option>
+                        <option value="Azerbaïdjan">🇦🇿 Azerbaïdjan</option>
+                        <option value="Bahamas">🇧🇸 Bahamas</option>
+                        <option value="Bahreïn">🇭 Bahreïn</option>
+                        <option value="Bangladesh">🇧 Bangladesh</option>
+                        <option value="Barbade">🇧🇧 Barbade</option>
+                        <option value="Belgique">🇪 Belgique</option>
+                        <option value="Belize">🇧🇿 Belize</option>
+                        <option value="Bénin">🇧🇯 Bénin</option>
+                        <option value="Bhoutan">🇧🇹 Bhoutan</option>
+                        <option value="Biélorussie">🇧🇾 Biélorussie</option>
+                        <option value="Birmanie">🇲🇲 Birmanie</option>
+                        <option value="Bolivie">🇧🇴 Bolivie</option>
+                        <option value="Bosnie-Herzégovine">🇧🇦 Bosnie-Herzégovine</option>
+                        <option value="Botswana">🇧🇼 Botswana</option>
+                        <option value="Brésil">🇷 Brésil</option>
+                        <option value="Brunei">🇧🇳 Brunei</option>
+                        <option value="Bulgarie">🇧🇬 Bulgarie</option>
+                        <option value="Burkina Faso">🇧🇫 Burkina Faso</option>
+                        <option value="Burundi">🇧🇮 Burundi</option>
+                        <option value="Cambodge">🇰🇭 Cambodge</option>
+                        <option value="Cameroun">🇲 Cameroun</option>
+                        <option value="Canada">🇦 Canada</option>
+                        <option value="Cap-Vert">🇨🇻 Cap-Vert</option>
+                        <option value="Centrafrique">🇨🇫 Centrafrique</option>
+                        <option value="Chili">🇨🇱 Chili</option>
+                        <option value="Chine">🇳 Chine</option>
+                        <option value="Chypre">🇨🇾 Chypre</option>
+                        <option value="Colombie">🇨🇴 Colombie</option>
+                        <option value="Comores">🇲 Comores</option>
+                        <option value="Corée du Nord">🇰🇵 Corée du Nord</option>
+                        <option value="Corée du Sud">🇷 Corée du Sud</option>
+                        <option value="Costa Rica">🇨🇷 Costa Rica</option>
+                        <option value="Côte d'Ivoire">🇨🇮 Côte d'Ivoire</option>
+                        <option value="Croatie">🇭🇷 Croatie</option>
+                        <option value="Cuba">🇨🇺 Cuba</option>
+                        <option value="Danemark">🇩🇰 Danemark</option>
+                        <option value="Djibouti">🇩🇯 Djibouti</option>
+                        <option value="Dominique">🇲 Dominique</option>
+                        <option value="Égypte">🇪🇬 Égypte</option>
+                        <option value="Émirats arabes unis">🇦🇪 Émirats arabes unis</option>
+                        <option value="Équateur">🇪🇨 Équateur</option>
+                        <option value="Érythrée">🇪🇷 Érythrée</option>
+                        <option value="Espagne">🇪🇸 Espagne</option>
+                        <option value="Estonie">🇪 Estonie</option>
+                        <option value="Eswatini">🇸🇿 Eswatini</option>
+                        <option value="États-Unis">🇺🇸 États-Unis</option>
+                        <option value="Éthiopie">🇪🇹 Éthiopie</option>
+                        <option value="Fidji">🇫🇯 Fidji</option>
+                        <option value="Finlande">🇮 Finlande</option>
+                        <option value="France">🇫🇷 France</option>
+                        <option value="Gabon">🇬🇦 Gabon</option>
+                        <option value="Gambie">🇲 Gambie</option>
+                        <option value="Géorgie">🇬🇪 Géorgie</option>
+                        <option value="Ghana">🇬🇭 Ghana</option>
+                        <option value="Grèce">🇬🇷 Grèce</option>
+                        <option value="Grenade">🇩 Grenade</option>
+                        <option value="Guatemala">🇬🇹 Guatemala</option>
+                        <option value="Guinée">🇬🇳 Guinée</option>
+                        <option value="Guinée équatoriale">🇬🇶 Guinée équatoriale</option>
+                        <option value="Guinée-Bissau">🇬🇼 Guinée-Bissau</option>
+                        <option value="Guyana">🇬🇾 Guyana</option>
+                        <option value="Guyane française">🇬🇫 Guyane française</option>
+                        <option value="Haïti">🇭🇹 Haïti</option>
+                        <option value="Honduras">🇭🇳 Honduras</option>
+                        <option value="Hongrie">🇺 Hongrie</option>
+                        <option value="Inde">🇮🇳 Inde</option>
+                        <option value="Indonésie">🇮🇩 Indonésie</option>
+                        <option value="Irak">🇶 Irak</option>
+                        <option value="Iran">🇮🇷 Iran</option>
+                        <option value="Irlande">🇮🇪 Irlande</option>
+                        <option value="Islande">🇸 Islande</option>
+                        <option value="Israël">🇮🇱 Israël</option>
+                        <option value="Italie">🇮🇹 Italie</option>
+                        <option value="Jamaïque">🇯🇲 Jamaïque</option>
+                        <option value="Japon">🇯🇵 Japon</option>
+                        <option value="Jordanie">🇯🇴 Jordanie</option>
+                        <option value="Kazakhstan">🇰🇿 Kazakhstan</option>
+                        <option value="Kenya">🇰🇪 Kenya</option>
+                        <option value="Kirghizistan">🇰🇬 Kirghizistan</option>
+                        <option value="Kiribati">🇰🇮 Kiribati</option>
+                        <option value="Koweït">🇰🇼 Koweït</option>
+                        <option value="Laos">🇱🇦 Laos</option>
+                        <option value="Lesotho">🇸 Lesotho</option>
+                        <option value="Lettonie">🇱🇻 Lettonie</option>
+                        <option value="Liban">🇱🇧 Liban</option>
+                        <option value="Liberia">🇱🇷 Liberia</option>
+                        <option value="Libye">🇱🇾 Libye</option>
+                        <option value="Liechtenstein">🇱🇮 Liechtenstein</option>
+                        <option value="Lituanie">🇱🇹 Lituanie</option>
+                        <option value="Luxembourg">🇺 Luxembourg</option>
+                        <option value="Macédoine du Nord">🇲🇰 Macédoine du Nord</option>
+                        <option value="Madagascar">🇬 Madagascar</option>
+                        <option value="Malaisie">🇲🇾 Malaisie</option>
+                        <option value="Malawi">🇲🇼 Malawi</option>
+                        <option value="Maldives">🇲🇻 Maldives</option>
+                        <option value="Mali">🇱 Mali</option>
+                        <option value="Malte">🇲🇹 Malte</option>
+                        <option value="Maroc">🇲🇦 Maroc</option>
+                        <option value="Maurice">🇲🇺 Maurice</option>
+                        <option value="Mauritanie">🇷 Mauritanie</option>
+                        <option value="Mexique">🇲🇽 Mexique</option>
+                        <option value="Micronésie">🇫 Micronésie</option>
+                        <option value="Moldavie">🇲 Moldavie</option>
+                        <option value="Monaco">🇲 Monaco</option>
+                        <option value="Mongolie">🇲🇳 Mongolie</option>
+                        <option value="Monténégro">🇲🇪 Monténégro</option>
+                        <option value="Mozambique">🇲🇿 Mozambique</option>
+                        <option value="Namibie">🇦 Namibie</option>
+                        <option value="Nauru">🇳🇷 Nauru</option>
+                        <option value="Népal">🇳🇵 Népal</option>
+                        <option value="Nicaragua">🇳 Nicaragua</option>
+                        <option value="Niger">🇳🇪 Niger</option>
+                        <option value="Nigeria">🇳🇬 Nigeria</option>
+                        <option value="Norvège">🇳🇴 Norvège</option>
+                        <option value="Nouvelle-Zélande">🇳🇿 Nouvelle-Zélande</option>
+                        <option value="Oman">🇴🇲 Oman</option>
+                        <option value="Ouganda">🇬 Ouganda</option>
+                        <option value="Ouzbékistan">🇿 Ouzbékistan</option>
+                        <option value="Pakistan">🇰 Pakistan</option>
+                        <option value="Palaos">🇵 Palaos</option>
+                        <option value="Palestine">🇵🇸 Palestine</option>
+                        <option value="Panama">🇵🇦 Panama</option>
+                        <option value="Papouasie-Nouvelle-Guinée">🇵🇬 Papouasie-Nouvelle-Guinée</option>
+                        <option value="Paraguay">🇵🇾 Paraguay</option>
+                        <option value="Pays-Bas">🇳🇱 Pays-Bas</option>
+                        <option value="Pérou">🇵🇪 Pérou</option>
+                        <option value="Philippines">🇭 Philippines</option>
+                        <option value="Pologne">🇵🇱 Pologne</option>
+                        <option value="Portugal">🇵🇹 Portugal</option>
+                        <option value="Qatar">🇶🇦 Qatar</option>
+                        <option value="République démocratique du Congo">🇩 RD Congo</option>
+                        <option value="République du Congo">🇨🇬 Congo</option>
+                        <option value="République dominicaine">🇴 Rép. dominicaine</option>
+                        <option value="République tchèque">🇨🇿 Rép. tchèque</option>
+                        <option value="Roumanie">🇷🇴 Roumanie</option>
+                        <option value="Royaume-Uni">🇬🇧 Royaume-Uni</option>
+                        <option value="Russie">🇺 Russie</option>
+                        <option value="Rwanda">🇷 Rwanda</option>
+                        <option value="Saint-Kitts-et-Nevis">🇰🇳 Saint-Kitts-et-Nevis</option>
+                        <option value="Saint-Vincent-et-les-Grenadines">🇻🇨 Saint-Vincent</option>
+                        <option value="Sainte-Lucie">🇱🇨 Sainte-Lucie</option>
+                        <option value="Salomon">🇧 Salomon</option>
+                        <option value="Salvador">🇸🇻 Salvador</option>
+                        <option value="Samoa">🇼🇸 Samoa</option>
+                        <option value="Sao Tomé-et-Principe">🇸🇹 Sao Tomé</option>
+                        <option value="Sénégal">🇸🇳 Sénégal</option>
+                        <option value="Serbie">🇷🇸 Serbie</option>
+                        <option value="Seychelles">🇸🇨 Seychelles</option>
+                        <option value="Sierra Leone">🇸🇱 Sierra Leone</option>
+                        <option value="Singapour">🇬 Singapour</option>
+                        <option value="Slovaquie">🇰 Slovaquie</option>
+                        <option value="Slovénie">🇮 Slovénie</option>
+                        <option value="Somalie">🇴 Somalie</option>
+                        <option value="Soudan">🇸🇩 Soudan</option>
+                        <option value="Soudan du Sud">🇸🇸 Soudan du Sud</option>
+                        <option value="Sri Lanka">🇱🇰 Sri Lanka</option>
+                        <option value="Suède">🇸🇪 Suède</option>
+                        <option value="Suisse">🇭 Suisse</option>
+                        <option value="Suriname">🇸🇷 Suriname</option>
+                        <option value="Syrie">🇸🇾 Syrie</option>
+                        <option value="Tadjikistan">🇹🇯 Tadjikistan</option>
+                        <option value="Tanzanie">🇹🇿 Tanzanie</option>
+                        <option value="Tchad">🇹🇩 Tchad</option>
+                        <option value="Thaïlande">🇹🇭 Thaïlande</option>
+                        <option value="Timor oriental">🇹🇱 Timor oriental</option>
+                        <option value="Togo">🇬 Togo</option>
+                        <option value="Tonga">🇹🇴 Tonga</option>
+                        <option value="Trinité-et-Tobago">🇹 Trinité-et-Tobago</option>
+                        <option value="Tunisie">🇹🇳 Tunisie</option>
+                        <option value="Turkménistan">🇲 Turkménistan</option>
+                        <option value="Turquie">🇷 Turquie</option>
+                        <option value="Tuvalu">🇹🇻 Tuvalu</option>
+                        <option value="Ukraine">🇺🇦 Ukraine</option>
+                        <option value="Uruguay">🇾 Uruguay</option>
+                        <option value="Vanuatu">🇻🇺 Vanuatu</option>
+                        <option value="Vatican">🇻🇦 Vatican</option>
+                        <option value="Venezuela">🇪 Venezuela</option>
+                        <option value="Viêt Nam">🇻 Viêt Nam</option>
+                        <option value="Yémen">🇾🇪 Yémen</option>
+                        <option value="Zambie">🇲 Zambie</option>
+                        <option value="Zimbabwe">🇿 Zimbabwe</option>
+                    </select>
+                    </div>
+
                 <div class="form-group">
                     <label for="parrain">👤 Indiquez la personne qui vous a invité(e) *</label>
                     <input type="text" id="parrain" name="parrain" required placeholder="Ex: Laurent, Karine, Sophie...">
                     <small style="color: var(--text-secondary); display: block; margin-top: 5px; font-size: 0.95em;">Ce champ est obligatoire pour valider votre inscription et être accompagné par la bonne personne.</small>
                 </div>
+                
                 <div id="referrerInfo" style="background: #ebf8ff; border-left: 4px solid var(--accent-color); padding: 15px; margin: 18px 0; border-radius: 6px; display: none; text-align: left;">
-                    <strong style="color: var(--primary-color);">ℹ️ Information :</strong>
+                    <strong style="color: var(--primary-color);">️ Information :</strong>
                     <p style="margin: 8px 0 0 0; color: var(--text-primary);">Vous avez été recommandé(e) par <strong id="dynamicReferrer"></strong>. Le champ ci-dessus a été pré-rempli automatiquement.</p>
                 </div>
-				<h3>Nous serons heureux de vous accueillir lors de cette présentation.</h3>
-                <button type="submit" class="cta-button" style="width: 100%; margin: 25px 0;">👉 Oui, je confirme ma participation au Zoom </button>
+                
+                <h3 style="text-align: center; margin: 25px 0 15px;">Nous serons heureux de vous accueillir lors de cette présentation.</h3>
+                <button type="submit" class="cta-button" style="width: 100%; margin: 25px 0;">👉 Oui, je confirme ma participation au Zoom</button>
                 <div class="guarantee"><strong>🔒 Vos Données Sont Protégées</strong><br>Conformément au RGPD, vos informations sont confidentielles et ne seront jamais partagées. Désinscription possible à tout moment.</div>
             </form>
+            
+            <!-- CHECKLIST ALIGNÉE À GAUCHE -->
             <div style="background: #bee3f8; border-left: 5px solid var(--accent-color); padding: 18px; border-radius: 8px; margin: 20px 0; text-align: left;">
-                <strong style="color: var(--primary-color); display: block; margin-bottom: 8px;">ℹ️ Comment ça fonctionne après l'inscription ?</strong>
-                <ol style="margin-left: 20px; color: var(--text-primary);">
-                    <li>Vous recevez immédiatement votre lien Zoom par email</li>
-                    <li>Vous assisterez à la présentation au créneau horaire de votre choix</li>
-                    <li>Vous pourrez ensuite poser toutes vos questions</li>
-                    <li>Nous vous accompagnerons dans vos démarches</li>
-                </ol>
+                <strong style="color: var(--primary-color); display: block; margin-bottom: 10px;">ℹ️ Après votre inscription :</strong>
+                <ul>
+                    <li><span>✅</span> <span>Vous recevez immédiatement votre lien Zoom</span></li>
+                    <li><span>✅</span> <span>Vous assisterez à la présentation au créneau horaire de votre choix</span></li>
+                    <li><span>✅</span> <span>Vous pourrez ensuite poser toutes vos questions</span></li>
+                    <li><span>✅</span> <span>Nous vous accompagnerons dans vos démarches</span></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -347,9 +628,7 @@ communauté. »<br>
             <a href="#" onclick="showModal('confidentialite'); return false;">Politique de Confidentialité</a> | 
             <a href="#" onclick="showModal('cgu'); return false;">Conditions d'Utilisation</a>
         </p>
-        <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.9;">🎯Site réalisé avec le soutien technique et créatif de <strong>Laurent et Léo</strong></p>
-	    </div>
-<!-- FIN PARTENARIAT -->
+        <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.9;"> Site réalisé avec le soutien technique et créatif de <strong>Laurent et Léo</strong></p>
     </div>
 
     <!-- Modals -->
@@ -368,9 +647,9 @@ communauté. »<br>
             'arsene': { name: 'Arsene Ngoran', email: 'kouassidechrist83@gmail.com', whatsapp: '+2250712466383', zoom: 'https://us07web.zoom.us/j/4621046155' },
             'alain': { name: 'Alain Malessan', email: 'harmonienaturae@gmail.com', whatsapp: '+33677835721', zoom: 'https://us07web.zoom.us/j/4621046155' },
             'karine': { name: 'SUCCESS - ATOMY', email: 'originesource69@gmail.com', whatsapp: '+33613704730', zoom: 'https://us07web.zoom.us/j/4621046155' },
-			'liliane': { name: 'Liliane fleurs des îles', email: 'liliane.bonine@yahoo.com', whatsapp: '+33641859298', zoom: 'https://us07web.zoom.us/j/4621046155' },
+            'liliane': { name: 'Liliane fleurs des îles', email: 'liliane.bonine@yahoo.com', whatsapp: '+33641859298', zoom: 'https://us07web.zoom.us/j/4621046155' },
             'marie-pierre': { name: 'MARIE-PIERRE', email: 'mpj_piotte@yahoo.fr', whatsapp: '+33668410173', zoom: 'https://us07web.zoom.us/j/4621046155' },
-			'nicolas': { name: 'Nicolas Coquinelis', email: 'nicolas.coquinelis@gmail.com', whatsapp: '+33623483743', zoom: 'https://us07web.zoom.us/j/4621046155' }
+            'nicolas': { name: 'Nicolas Coquinelis', email: 'nicolas.coquinelis@gmail.com', whatsapp: '+33623483743', zoom: 'https://us07web.zoom.us/j/4621046155' }
         };
 
         // ========== NAVIGATION ==========
@@ -401,60 +680,56 @@ communauté. »<br>
 
         // ========== FORM HANDLING ==========
         function handleSubmit(e) {
-    e.preventDefault();
-    
-    const prenom = document.getElementById('prenom').value;
-    const nom = document.getElementById('nom').value;
-    const email = document.getElementById('email').value;
-    const telephone = document.getElementById('telephone').value;
-    const pays = document.getElementById('pays').value;
-    const parrain = document.getElementById('parrain').value;
-    
-    // Désactiver le bouton
-    const submitBtn = e.target.querySelector('button[type="submit"]');
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Envoi en cours...";
-    }
-    
-    // Données à envoyer au proxy
-    const formData = {
-        nom: prenom + ' ' + nom,
-        email: email,
-        telephone: telephone,
-        message: `Nouvelle inscription ATOMY\n\nNom: ${nom}\nPrénom: ${prenom}\nPays: ${pays}\nParrain: ${parrain}`,
-        source: 'Tunnel ATOMY - Standard'
-    };
-    
-    // Envoyer au proxy Render
-    fetch('https://atomy-brevo-proxy.onrender.com/api/atomy-contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(result => {
-        if (result.success) {
-            // Succès
-            document.getElementById('userName').textContent = prenom;
-            goToSection(5);
+            e.preventDefault();
+            const prenom = document.getElementById('prenom').value;
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const telephone = document.getElementById('telephone').value;
+            const pays = document.getElementById('pays').value;
+            const parrain = document.getElementById('parrain').value;
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
             if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Envoyer";
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Envoi en cours...";
             }
-        } else {
-            throw new Error(result.message);
+            
+            const formData = {
+                nom: prenom + ' ' + nom,
+                email: email,
+                telephone: telephone,
+                message: `Nouvelle inscription ATOMY\n\nNom: ${nom}\nPrénom: ${prenom}\nPays: ${pays}\nParrain: ${parrain}`,
+                source: 'Tunnel ATOMY - Standard'
+            };
+            
+            fetch('https://atomy-brevo-proxy.onrender.com/api/atomy-contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    document.getElementById('userName').textContent = prenom;
+                    goToSection(5);
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = "Envoyer";
+                    }
+                } else {
+                    throw new Error(result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue. Veuillez réessayer.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Envoyer";
+                }
+            });
         }
-    })
-    .catch(error => {
-        console.error('Erreur:', error);
-        alert('Une erreur est survenue. Veuillez réessayer.');
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Envoyer";
-        }
-    });
-}
+
         // ========== MODALS ==========
         const legalContent = {
             mentions: `<h3 style="color:var(--primary-color); margin-bottom:15px;">Mentions Légales</h3><p><strong>Éditeur :</strong> Marie - Pierre - Partenaire Indépendant ATOMY</p><p><strong>Contact :</strong> mpj_piotte@yahoo.fr</p><p><strong>Hébergement :</strong> Netlify, Inc.<br>Adresse : 44 Montgomery St, Suite 300, San Francisco, CA 94104, USA<br>Site : https://www.netlify.com</p><p><strong>Responsable publication :</strong> Marie - Pierre </p><p style="margin-top:15px;"><strong>À propos d'ATOMY :</strong> Ce site est géré par un partenaire indépendant de la société ATOMY. ATOMY est une marque déposée.</p>`,
